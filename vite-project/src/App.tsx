@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
 import { AppDispatch, StateType } from './redux/store'
-import { decrease, increase, reset } from './redux/reuducer'
+import { decrease, increase, increaseByAmount, reset } from './redux/reuducer'
 
 function App() {
   const value = useSelector((state: StateType) => state.counter.value)
@@ -21,6 +21,7 @@ function App() {
           <button onClick={() => dispatch(increase())}>increase</button>
           <button onClick={() => dispatch(decrease())}>decrease</button>
           <button onClick={() => dispatch(reset())}>reset</button>
+          <button onClick={() => dispatch(increaseByAmount(10))}>increase by 10</button>
         </div>
       </div>
     </>
